@@ -9,12 +9,18 @@ file.close()
 #リスト化する
 information=[]
 lines=data.split('\n')
+del lines[0]
+del lines[-1]
+keywords=[]
 for line in lines:
     recipe=line.split(',')
     information.append(recipe)
+    key=[recipe[3],recipe[4],recipe[5]]
+    keywords.append(key)
+#レシピを特良づけるキーワードを出力
+print(keywords)
 
-del information[0]
-del information[-1]
+
 #グラフ化しやすいように別々にリスト化する
 cooktime=[]
 ingredients=[]
